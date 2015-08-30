@@ -1,0 +1,43 @@
+html {
+	width: 200px;
+}
+
+body {
+	height: 230px;
+	padding-left: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #2E2E2E;
+	
+}
+
+button {
+	background-color:#FFFFFA;
+	border: none;
+	font-family: Verdana, Geneva, sans-serif;
+
+}
+h2 {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFFFFA;
+	font-weight: lighter;
+}
+p {
+	margin-left: 10px;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: lighter;
+	font-size: 14px;
+	color: #F0F0F0;
+
+}
+
+#goButtonLine {
+	padding-top: 12px;
+	padding-right: 10px;
+	text-align: center;
+}
+
+#replay{
+	padding-right: 10px;
+	text-align: center;
+}
+
