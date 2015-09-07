@@ -7,7 +7,12 @@ body {
 	padding-left: 20px;
 	font-family: Verdana, Geneva, sans-serif;
 	background-color: #2E2E2E;
-	
+
+}
+
+/*removes blue border from around the button on Chrome */
+button:focus {
+	outline:0;
 }
 
 button {
@@ -16,6 +21,7 @@ button {
 	font-family: Verdana, Geneva, sans-serif;
 
 }
+
 h2 {
 	font-family: Verdana, Geneva, sans-serif;
 	color: #FFFFFA;
