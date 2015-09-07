@@ -1,7 +1,6 @@
 //declare variables
 var compAnswer;
 var userAnswer;
-var tie = false;
 var goButton = document.getElementById('go');
 var playAgainButton = document.getElementById('playAgain');
 
