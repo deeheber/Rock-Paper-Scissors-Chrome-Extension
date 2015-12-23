@@ -68,7 +68,6 @@ function compare (userAnswer){
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
         result.setAttribute("class", "yellow");
-        playAgainButton.style.visibility = "visible";
     }
 
     else if(userAnswer === "rock") {
@@ -76,12 +75,10 @@ function compare (userAnswer){
         if(compAnswer === "scissors") {
             result.innerHTML = "rock wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
         }
         else {
             result.innerHTML = "paper wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
         }
     }
     else if(userAnswer === "paper"){
@@ -89,26 +86,24 @@ function compare (userAnswer){
         if(compAnswer === "rock"){
             result.innerHTML = "paper wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
         }
     }
     else {
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
         }
     }
+    score.innerHTML = "You: " + userScore + " Computer: " + computerScore;
+    playAgainButton.style.visibility = "visible";
 }
 
 //refresh the page
