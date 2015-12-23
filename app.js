@@ -5,6 +5,8 @@ var playAgainButton = document.getElementById('playAgain');
 
 function initialize(){
     playAgainButton.style.visibility = "hidden";
+    //removing color on the prior result
+    result.removeAttribute("class");
     playAgainButton.addEventListener("click", refresh);
 
     var userGuess = document.getElementsByClassName('userGuess');
@@ -59,10 +61,12 @@ function compare (userAnswer){
 
         if(compAnswer === "scissors") {
             result.innerHTML = "rock wins";
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
         else {
             result.innerHTML = "paper wins";
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
     }
@@ -70,20 +74,24 @@ function compare (userAnswer){
 
         if(compAnswer === "rock"){
             result.innerHTML = "paper wins";
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
     }
     else if (userAnswer === "scissors"){
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
     }

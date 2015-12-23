@@ -33,3 +33,13 @@ p {
 	text-transform: capitalize;
 	color: #F0F0F0;
 }
+
+.green {
+	color: green;
+	font-weight: 600;
+}
+
+.red {
+	color: red;
+	font-weight: 600;
+}
