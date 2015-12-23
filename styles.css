@@ -4,9 +4,9 @@ html {
 
 body {
 	height: 230px;
-	padding-left: 20px;
 	font-family: Verdana, Geneva, sans-serif;
-	background-color: #2E2E2E;
+	text-align: center;
+	background-color: #444;
 
 }
 
@@ -18,32 +18,18 @@ button:focus {
 button {
 	background-color:#FFFFFA;
 	border: none;
-	font-family: Verdana, Geneva, sans-serif;
-
+	text-align: center;
 }
 
 h2 {
-	font-family: Verdana, Geneva, sans-serif;
 	color: #FFFFFA;
 	font-weight: lighter;
 }
 p {
-	margin-left: 10px;
+	margin-left: 20px;
 	font-family: "Courier New", Courier, monospace;
-	font-weight: lighter;
 	font-size: 14px;
+	text-align: left;
 	color: #F0F0F0;
 
 }
-
-#goButtonLine {
-	padding-top: 12px;
-	padding-right: 10px;
-	text-align: center;
-}
-
-#replay{
-	padding-right: 10px;
-	text-align: center;
-}
-

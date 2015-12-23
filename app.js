@@ -8,18 +8,12 @@ function getUserAnswer (choice) {
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
 
-     //Enable go button
-     goButton.disabled = false;
-
-     //Make go button visible
-     goButton.style.visibility = "visible";
-
-     userAnswer = choice;
-     return userAnswer;
+     var userAnswer = choice;
+     compare(userAnswer);
  }
 
  //Compare computer's answer to the user's answer to see who won
-function compare (){
+function compare (userAnswer){
 
     //generate computer answer
     compAnswer = Math.random();
@@ -42,7 +36,6 @@ function compare (){
     //compare the user answer to the computer answer
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
-        goButton.disabled = true;
         playAgainButton.style.visibility = "visible";
     }
 
@@ -50,12 +43,10 @@ function compare (){
 
         if(compAnswer === "scissors") {
             result.innerHTML = "rock wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
         else {
             result.innerHTML = "paper wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
     }
@@ -63,24 +54,20 @@ function compare (){
 
         if(compAnswer === "rock"){
             result.innerHTML = "paper wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
     }
     else if (userAnswer === "scissors"){
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
-            goButton.disabled = true;
             playAgainButton.style.visibility = "visible";
         }
     }
