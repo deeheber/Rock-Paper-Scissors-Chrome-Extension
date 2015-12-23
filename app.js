@@ -15,7 +15,6 @@ function getUserAnswer (choice) {
      goButton.style.visibility = "visible";
 
      userAnswer = choice;
-     console.log(userAnswer);
      return userAnswer;
  }
 
