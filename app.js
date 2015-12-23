@@ -2,18 +2,31 @@
 window.addEventListener("load", initialize);
 
 var playAgainButton = document.getElementById('playAgain');
+var userScore = 0;
+var computerScore = 0;
 
 function initialize(){
-    playAgainButton.style.visibility = "hidden";
-    //removing color on the prior result
-    result.removeAttribute("class");
-    playAgainButton.addEventListener("click", refresh);
+
+    //removing and resetting prior results area
+    document.getElementById('rock').disabled = false;
+    document.getElementById('paper').disabled = false;
+    document.getElementById('scissors').disabled = false;
 
     var userGuess = document.getElementsByClassName('userGuess');
 
     for(var index = 0; index < userGuess.length; index++){
       userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
     }
+
+    playerChoice.innerHTML = "";
+    computerChoice.innerHTML = "";
+    result.innerHTML = "";
+    result.removeAttribute("class");
+    score.innerHTML = "";
+
+    playAgainButton.style.visibility = "hidden";
+    playAgainButton.addEventListener("click", initialize);
+
 }
 
 //Get user's answer and check to make sure it's valid
@@ -84,7 +97,7 @@ function compare (userAnswer){
             playAgainButton.style.visibility = "visible";
         }
     }
-    else if (userAnswer === "scissors"){
+    else {
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
             result.setAttribute("class", "red");
