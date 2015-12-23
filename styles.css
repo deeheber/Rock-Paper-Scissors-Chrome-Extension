@@ -30,6 +30,6 @@ p {
 	font-family: "Courier New", Courier, monospace;
 	font-size: 14px;
 	text-align: left;
+	text-transform: capitalize;
 	color: #F0F0F0;
-
 }

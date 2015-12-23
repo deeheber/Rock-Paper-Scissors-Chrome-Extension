@@ -1,3 +1,15 @@
+//Initial set up and adding Event Listeners
+
+var playAgainButton = document.getElementById('playAgain');
+playAgainButton.style.visibility = "hidden";
+playAgainButton.addEventListener("click", refresh, false);
+
+var userGuess = document.getElementsByClassName('userGuess');
+
+for(var index = 0; index < userGuess.length; index++){
+  userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
+}
+
 //Get user's answer and check to make sure it's valid
 function getUserAnswer (choice) {
 
@@ -16,7 +28,7 @@ function getUserAnswer (choice) {
 function compare (userAnswer){
 
     //generate computer answer
-    compAnswer = Math.random();
+    var compAnswer = Math.random();
 
     //Convert computer's answer into rock, paper, or scissors
     console.log('Computer: ' + compAnswer);
