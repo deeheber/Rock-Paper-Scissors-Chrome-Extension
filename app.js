@@ -54,6 +54,7 @@ function compare (userAnswer){
     //compare the user answer to the computer answer
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
+        result.setAttribute("class", "yellow");
         playAgainButton.style.visibility = "visible";
     }
 

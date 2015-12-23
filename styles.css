@@ -4,7 +4,7 @@ html {
 
 body {
 	height: 230px;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: montserrat, sans-serif;
 	text-align: center;
 	background-color: #444;
 
@@ -23,7 +23,7 @@ button {
 
 h2 {
 	color: #FFFFFA;
-	font-weight: lighter;
+	font-weight: 300;
 }
 p {
 	margin-left: 20px;
@@ -36,10 +36,21 @@ p {
 
 .green {
 	color: green;
-	font-weight: 600;
+	font-family: montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 1px;
 }
 
 .red {
 	color: red;
-	font-weight: 600;
+	font-family: montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.yellow {
+	color: yellow;
+	font-family: montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 1px;
 }
