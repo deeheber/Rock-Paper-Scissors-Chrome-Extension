@@ -1,29 +1,40 @@
+//Initial set up and adding Event Listeners to buttons
+window.addEventListener("load", initialize);
+
+var playAgainButton = document.getElementById('playAgain');
+
+function initialize(){
+    playAgainButton.style.visibility = "hidden";
+    //removing color on the prior result
+    result.removeAttribute("class");
+    playAgainButton.addEventListener("click", refresh);
+
+    var userGuess = document.getElementsByClassName('userGuess');
+
+    for(var index = 0; index < userGuess.length; index++){
+      userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
+    }
+}
+
 //Get user's answer and check to make sure it's valid
 function getUserAnswer (choice) {
 
-    playerChoice.innerHTML = 'Player: ' + choice;
+    playerChoice.innerHTML = 'You: ' + choice;
 
     //Disable user choice buttons
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
 
-     //Enable go button
-     goButton.disabled = false;
-
-     //Make go button visible
-     goButton.style.visibility = "visible";
-
-     userAnswer = choice;
-     console.log(userAnswer);
-     return userAnswer;
+    var userAnswer = choice;
+    compare(userAnswer);
  }
 
  //Compare computer's answer to the user's answer to see who won
-function compare (){
+function compare (userAnswer){
 
     //generate computer answer
-    compAnswer = Math.random();
+    var compAnswer = Math.random();
 
     //Convert computer's answer into rock, paper, or scissors
     console.log('Computer: ' + compAnswer);
@@ -43,7 +54,7 @@ function compare (){
     //compare the user answer to the computer answer
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
-        goButton.disabled = true;
+        result.setAttribute("class", "yellow");
         playAgainButton.style.visibility = "visible";
     }
 
@@ -51,12 +62,12 @@ function compare (){
 
         if(compAnswer === "scissors") {
             result.innerHTML = "rock wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
         else {
             result.innerHTML = "paper wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
     }
@@ -64,24 +75,24 @@ function compare (){
 
         if(compAnswer === "rock"){
             result.innerHTML = "paper wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
     }
     else if (userAnswer === "scissors"){
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "red");
             playAgainButton.style.visibility = "visible";
         }
         else{
             result.innerHTML = "scissors wins";
-            goButton.disabled = true;
+            result.setAttribute("class", "green");
             playAgainButton.style.visibility = "visible";
         }
     }
