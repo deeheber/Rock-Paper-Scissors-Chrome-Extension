@@ -1,27 +1,31 @@
-//Initial set up and adding Event Listeners
+//Initial set up and adding Event Listeners to buttons
+window.addEventListener("load", initialize);
 
 var playAgainButton = document.getElementById('playAgain');
-playAgainButton.style.visibility = "hidden";
-playAgainButton.addEventListener("click", refresh, false);
 
-var userGuess = document.getElementsByClassName('userGuess');
+function initialize(){
+    playAgainButton.style.visibility = "hidden";
+    playAgainButton.addEventListener("click", refresh);
 
-for(var index = 0; index < userGuess.length; index++){
-  userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
+    var userGuess = document.getElementsByClassName('userGuess');
+
+    for(var index = 0; index < userGuess.length; index++){
+      userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
+    }
 }
 
 //Get user's answer and check to make sure it's valid
 function getUserAnswer (choice) {
 
-    playerChoice.innerHTML = 'Player: ' + choice;
+    playerChoice.innerHTML = 'You: ' + choice;
 
     //Disable user choice buttons
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
 
-     var userAnswer = choice;
-     compare(userAnswer);
+    var userAnswer = choice;
+    compare(userAnswer);
  }
 
  //Compare computer's answer to the user's answer to see who won
