@@ -1,8 +1,8 @@
 ## Rock Paper or Scissors?
 
-### A computerized spin on a classic game.
+> A computerized spin on a classic game.
 
-Thanks for checkout out my Chrome extention. I hope you find it fun to pass the time. Feel free to send any feedback or questions my way.
+Thanks for checking out my Chrome extention. I hope you find it fun to pass the time. Feel free to send any feedback or questions my way.
 
 Installation Instructions:
   1. Open Chrome and type “chrome://extensions” into the address bar
