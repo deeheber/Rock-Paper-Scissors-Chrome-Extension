@@ -1,44 +1,47 @@
-//Initial set up and adding Event Listeners to buttons
-window.addEventListener("load", initialize);
+//Declaring global variables, adding Event Listeners, Initializing innerHTML
+var userScore = 0;
+var computerScore = 0;
 
-var playAgainButton = document.getElementById('playAgain');
+var userGuess = document.getElementsByClassName('userGuess');
 
-function initialize(){
-    playAgainButton.style.visibility = "hidden";
-    //removing color on the prior result
-    result.removeAttribute("class");
-    playAgainButton.addEventListener("click", refresh);
-
-    var userGuess = document.getElementsByClassName('userGuess');
-
-    for(var index = 0; index < userGuess.length; index++){
-      userGuess[index].addEventListener("click", function(){getUserAnswer(this.id);});
-    }
+for(var index = 0; index < userGuess.length; index++){
+    userGuess[index].addEventListener("click", function(){playGame(this.id);});
 }
 
-//Get user's answer and check to make sure it's valid
-function getUserAnswer (choice) {
+var playAgainButton = document.getElementById('playAgain');
+playAgainButton.addEventListener("click", initialize);
 
-    playerChoice.innerHTML = 'You: ' + choice;
+var clearScoresButton = document.getElementById('clearScores');
+clearScoresButton.addEventListener("click", startOver);
 
-    //Disable user choice buttons
+window.addEventListener("load", initialize);
+
+function initialize(){
+    document.getElementById('rock').disabled = false;
+    document.getElementById('paper').disabled = false;
+    document.getElementById('scissors').disabled = false;
+
+    playerChoice.innerHTML = "";
+    computerChoice.innerHTML = "";
+    result.innerHTML = "";
+    result.removeAttribute("class");
+    score.innerHTML = "";
+
+    playAgainButton.style.visibility = "hidden";
+    clearScoresButton.style.visibility = "hidden";
+}
+
+function playGame (choice) {
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
 
     var userAnswer = choice;
-    compare(userAnswer);
- }
+    playerChoice.innerHTML = 'You: ' + userAnswer;
 
- //Compare computer's answer to the user's answer to see who won
-function compare (userAnswer){
-
-    //generate computer answer
     var compAnswer = Math.random();
 
     //Convert computer's answer into rock, paper, or scissors
-    console.log('Computer: ' + compAnswer);
-
     if(compAnswer < 0.33){
         compAnswer = 'rock';
     }
@@ -51,11 +54,9 @@ function compare (userAnswer){
 
     computerChoice.innerHTML = 'Computer: ' + compAnswer;
 
-    //compare the user answer to the computer answer
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
         result.setAttribute("class", "yellow");
-        playAgainButton.style.visibility = "visible";
     }
 
     else if(userAnswer === "rock") {
@@ -63,12 +64,13 @@ function compare (userAnswer){
         if(compAnswer === "scissors") {
             result.innerHTML = "rock wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
+            userScore++;
         }
+
         else {
             result.innerHTML = "paper wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
+            computerScore++;
         }
     }
     else if(userAnswer === "paper"){
@@ -76,30 +78,33 @@ function compare (userAnswer){
         if(compAnswer === "rock"){
             result.innerHTML = "paper wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
+            userScore++;
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
+            computerScore++;
         }
     }
-    else if (userAnswer === "scissors"){
+    else {
         if(compAnswer === "rock"){
             result.innerHTML = "rock wins";
             result.setAttribute("class", "red");
-            playAgainButton.style.visibility = "visible";
+            computerScore++;
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "green");
-            playAgainButton.style.visibility = "visible";
+            userScore++;
         }
     }
+    score.innerHTML = "You: " + userScore + " Computer: " + computerScore;
+    playAgainButton.style.visibility = "visible";
+    clearScoresButton.style.visibility = "visible";
 }
 
 //refresh the page
-function refresh(){
+function startOver(){
     location.reload();
 }
 

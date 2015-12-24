@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	height: 230px;
+	height: 250px;
 	font-family: montserrat, sans-serif;
 	text-align: center;
 	background-color: #444;
@@ -19,9 +19,15 @@ button {
 	background-color:#FFFFFA;
 	border: none;
 	text-align: center;
+	border-radius: 3px;
+}
+
+#playAgainButtonArea {
+	margin-bottom: 10px;
 }
 
 h2 {
+	font-size: 20px;
 	color: #FFFFFA;
 	font-weight: 300;
 }
@@ -35,21 +41,21 @@ p {
 }
 
 .green {
-	color: green;
+	color: #6CC417;
 	font-family: montserrat, sans-serif;
 	font-weight: 500;
 	letter-spacing: 1px;
 }
 
 .red {
-	color: red;
+	color: #F75D59;
 	font-family: montserrat, sans-serif;
 	font-weight: 500;
 	letter-spacing: 1px;
 }
 
 .yellow {
-	color: yellow;
+	color: #FFDB58;
 	font-family: montserrat, sans-serif;
 	font-weight: 500;
 	letter-spacing: 1px;
