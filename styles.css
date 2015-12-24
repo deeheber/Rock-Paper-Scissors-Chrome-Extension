@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	height: 250px;
+	height: 280px;
 	font-family: montserrat, sans-serif;
 	text-align: center;
 	background-color: #444;
@@ -31,13 +31,21 @@ h2 {
 	color: #FFFFFA;
 	font-weight: 300;
 }
+
+h3 {
+	font-weight: 500;
+}
+
 p {
-	margin-left: 20px;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 14px;
-	text-align: left;
 	text-transform: capitalize;
 	color: #F0F0F0;
+}
+
+.text {
+	text-align: left;
+	margin-left: 20px;
 }
 
 .green {

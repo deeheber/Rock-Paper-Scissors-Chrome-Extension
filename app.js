@@ -1,6 +1,7 @@
 //Declaring global variables, adding Event Listeners, Initializing innerHTML
 var userScore = 0;
 var computerScore = 0;
+var roundCount = 0;
 
 var userGuess = document.getElementsByClassName('userGuess');
 
@@ -26,6 +27,7 @@ function initialize(){
     result.innerHTML = "";
     result.removeAttribute("class");
     score.innerHTML = "";
+    round.innerHTML = "";
 
     playAgainButton.style.visibility = "hidden";
     clearScoresButton.style.visibility = "hidden";
@@ -57,6 +59,7 @@ function playGame (choice) {
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
         result.setAttribute("class", "yellow");
+        roundCount++;
     }
 
     else if(userAnswer === "rock") {
@@ -65,12 +68,14 @@ function playGame (choice) {
             result.innerHTML = "rock wins";
             result.setAttribute("class", "green");
             userScore++;
+            roundCount++;
         }
 
         else {
             result.innerHTML = "paper wins";
             result.setAttribute("class", "red");
             computerScore++;
+            roundCount++;
         }
     }
     else if(userAnswer === "paper"){
@@ -79,11 +84,13 @@ function playGame (choice) {
             result.innerHTML = "paper wins";
             result.setAttribute("class", "green");
             userScore++;
+            roundCount++;
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "red");
             computerScore++;
+            roundCount++;
         }
     }
     else {
@@ -91,16 +98,44 @@ function playGame (choice) {
             result.innerHTML = "rock wins";
             result.setAttribute("class", "red");
             computerScore++;
+            roundCount++;
         }
         else{
             result.innerHTML = "scissors wins";
             result.setAttribute("class", "green");
             userScore++;
+            roundCount++;
         }
     }
-    score.innerHTML = "You: " + userScore + " Computer: " + computerScore;
-    playAgainButton.style.visibility = "visible";
-    clearScoresButton.style.visibility = "visible";
+
+    //checkes to see if five rounds were played
+    if(roundCount >= 5){
+        title.innerHTML = "Game Over";
+        buttonArea.style.display = "none";
+        result.innerHTML += "<hr>";
+        score.innerHTML = "<h3>Final Score</h3>";
+        score.innerHTML += "You: " + userScore + " Computer: " + computerScore;
+
+        //checks to see who won and color the text appropriately
+        if(userScore == computerScore){
+            score.setAttribute("class", "yellow");
+        }
+        else if(userScore > computerScore){
+            score.setAttribute("class", "green");
+        }
+        else {
+            score.setAttribute("class", "red");
+        }
+
+        playAgainButton.style.display = "none";
+        clearScoresButton.style.visibility = "visible";
+    }
+    else {
+        score.innerHTML = "You: " + userScore + " Computer: " + computerScore;
+        round.innerHTML = "Round " + roundCount + " of 5";
+        playAgainButton.style.visibility = "visible";
+        clearScoresButton.style.visibility = "visible";
+    }
 }
 
 //refresh the page
