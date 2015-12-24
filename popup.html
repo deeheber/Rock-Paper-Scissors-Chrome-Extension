@@ -7,21 +7,22 @@
 
   <body>
     <div>
-      <h2>What will it be?</h2>
-      <div>
+      <h2 id="title">What will it be?</h2>
+      <div id="buttonArea">
     	  <button id = 'rock' class = 'userGuess'>Rock</button>
         <button id = 'paper' class = 'userGuess'>Paper</button>
         <button id = 'scissors' class = 'userGuess'>Scissors</button>
       </div>
-        <p id='playerChoice'></p>
-        <p id='computerChoice'></p>
+        <p id='playerChoice' class="text"></p>
+        <p id='computerChoice' class="text"></p>
         <p id='result'></p>
-        <p id='score'></p>
-      <div id="playAgainButtonArea">
-        <button id = 'playAgain'>Play Again</button>
+        <p id='score' class="text"></p>
+        <p id='round' class="text"></p>
+      <div id = "playAgainButtonArea">
+        <button id = 'playAgain'>Next Round</button>
       </div>
       <div>
-        <button id= 'clearScores'>Clear Scores</button>
+        <button id= 'clearScores'>New Game </button>
       </div>
     </div>
         <script src="app.js"></script>
