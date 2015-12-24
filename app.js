@@ -1,7 +1,4 @@
-//Initial set up and adding Event Listeners to buttons
-window.addEventListener("load", initialize);
-
-var playAgainButton = document.getElementById('playAgain');
+//Declaring global variables, adding Event Listeners, Initializing innerHTML
 var userScore = 0;
 var computerScore = 0;
 
@@ -11,11 +8,12 @@ for(var index = 0; index < userGuess.length; index++){
     userGuess[index].addEventListener("click", function(){playGame(this.id);});
 }
 
+var playAgainButton = document.getElementById('playAgain');
 playAgainButton.addEventListener("click", initialize);
 
-function initialize(){
+window.addEventListener("load", initialize);
 
-    //removing and resetting prior results area
+function initialize(){
     document.getElementById('rock').disabled = false;
     document.getElementById('paper').disabled = false;
     document.getElementById('scissors').disabled = false;
@@ -27,27 +25,19 @@ function initialize(){
     score.innerHTML = "";
 
     playAgainButton.style.visibility = "hidden";
-
 }
 
-//Get user's answer and check to make sure it's valid
 function playGame (choice) {
-
-    playerChoice.innerHTML = 'You: ' + choice;
-
-    //Disable user choice buttons
     document.getElementById('rock').disabled = true;
     document.getElementById('paper').disabled = true;
     document.getElementById('scissors').disabled = true;
 
     var userAnswer = choice;
+    playerChoice.innerHTML = 'You: ' + userAnswer;
 
-    //generate computer answer
     var compAnswer = Math.random();
 
     //Convert computer's answer into rock, paper, or scissors
-    console.log('Computer: ' + compAnswer);
-
     if(compAnswer < 0.33){
         compAnswer = 'rock';
     }
@@ -60,7 +50,6 @@ function playGame (choice) {
 
     computerChoice.innerHTML = 'Computer: ' + compAnswer;
 
-    //compare the user answer to the computer answer
     if (userAnswer === compAnswer){
         result.innerHTML = "The result is a tie!";
         result.setAttribute("class", "yellow");
