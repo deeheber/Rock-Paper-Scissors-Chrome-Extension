@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	height: 230px;
+	height: 250px;
 	font-family: montserrat, sans-serif;
 	text-align: center;
 	background-color: #444;
@@ -21,7 +21,12 @@ button {
 	text-align: center;
 }
 
+#playAgainButtonArea {
+	margin-bottom: 10px;
+}
+
 h2 {
+	font-size: 20px;
 	color: #FFFFFA;
 	font-weight: 300;
 }

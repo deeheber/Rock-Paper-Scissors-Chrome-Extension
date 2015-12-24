@@ -11,6 +11,9 @@ for(var index = 0; index < userGuess.length; index++){
 var playAgainButton = document.getElementById('playAgain');
 playAgainButton.addEventListener("click", initialize);
 
+var clearScoresButton = document.getElementById('clearScores');
+clearScoresButton.addEventListener("click", startOver);
+
 window.addEventListener("load", initialize);
 
 function initialize(){
@@ -25,6 +28,7 @@ function initialize(){
     score.innerHTML = "";
 
     playAgainButton.style.visibility = "hidden";
+    clearScoresButton.style.visibility = "hidden";
 }
 
 function playGame (choice) {
@@ -96,10 +100,11 @@ function playGame (choice) {
     }
     score.innerHTML = "You: " + userScore + " Computer: " + computerScore;
     playAgainButton.style.visibility = "visible";
+    clearScoresButton.style.visibility = "visible";
 }
 
 //refresh the page
-function refresh(){
+function startOver(){
     location.reload();
 }
 
