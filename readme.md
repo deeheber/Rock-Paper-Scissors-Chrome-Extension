@@ -1,6 +1,6 @@
 ## Rock Paper or Scissors?
 
-Download and install on the Crhome app store [here](https://chrome.google.com/webstore/detail/rock-paper-scissors/ngdfhjfgdakniamhoodbaljgoaoollok)
+Download and install on the Chrome app store [here](https://chrome.google.com/webstore/detail/rock-paper-scissors/ngdfhjfgdakniamhoodbaljgoaoollok)
 
 > A computerized spin on a classic game.
 
