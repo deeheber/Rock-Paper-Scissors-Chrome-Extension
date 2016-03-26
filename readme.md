@@ -1,10 +1,8 @@
 ## Rock Paper or Scissors?
 
+> A computerized version of a classic handheld game. Created for serious competition, settling differences, or when you don’t have any coins for a coin toss
+
 Download and install on the Chrome app store [here](https://chrome.google.com/webstore/detail/rock-paper-scissors/ngdfhjfgdakniamhoodbaljgoaoollok)
-
-> A computerized spin on a classic game.
-
-Thanks for checking out my Chrome extention. I hope you find it fun to pass the time. Feel free to send any feedback or questions my way.
 
 Installation Instructions if you prefer to not download from the Chrome app store:
   1. Open Chrome and type “chrome://extensions” into the address bar
